@@ -26,16 +26,16 @@ $(function () {
     window.initializeCodeFolding(true);
   }
 
-  /* ----------  Portfolio filter buttons  ---------- */
-  $("#portfolio-button-container").on("click", "button", function () {
-    var section = $(this).data("portfolio-section");
-    $("#portfolio-button-container button").removeClass("active");
-    $(this).addClass("active");
-    if (section === "all") {
-      $("#portfolio-items > div").addClass("show");
-    } else {
-      $("#portfolio-items > div").removeClass("show")
-                                 .filter("." + section).addClass("show");
-    }
-  });
-});
+//   /* ----------  Portfolio filter buttons  ---------- */
+//   $("#portfolio-button-container").on("click", "button", function () {
+//     var section = $(this).data("portfolio-section");
+//     $("#portfolio-button-container button").removeClass("active");
+//     $(this).addClass("active");
+//     if (section === "all") {
+//       $("#portfolio-items > div").addClass("show");
+//     } else {
+//       $("#portfolio-items > div").removeClass("show")
+//                                  .filter("." + section).addClass("show");
+//     }
+//   });
+// });
