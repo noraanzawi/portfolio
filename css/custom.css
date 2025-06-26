@@ -1,0 +1,20 @@
+/* limit headshot width */
+.headshot{
+  max-width:140px;
+  height:auto;
+  margin:0 0 20px;
+}
+
+/* unify social-icon size */
+.social-icon{
+  width:42px;
+  height:42px;
+}
+
+/* keep service icons tidy */
+.service-icon{
+  max-width:160px;
+  width:70%;
+  height:auto;
+  margin:0 auto 10px;
+}
