@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- GOOGLE FONT (Source Sans Pro) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- normal meta / title stuff -->
     <meta charset="utf-8"/>
     <meta name="generator" content="pandoc"/>
     <meta name="author" content="Nora Anzawi"/>
@@ -8,19 +15,31 @@
     <title>Data Specialist, Urban and Economic Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="css/styles.css">
-
     <!-- jQuery CDN (required for Pandoc's scripts) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- External Pandoc-specific JS (decoded from base64) -->
+
+    <!-- 1 ▸ jQuery UI core – Tocify depends on the widget factory -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- 2 ▸ Tocify plugin -->
+    <link  rel="stylesheet" href="css/jquery.tocify.min.css">
+    <script src="js/jquery.tocify.min.js"></script>
+
+    <!-- 4 ▸ Pandoc helper functions  -->
     <script src="js/pandoc-functions.js"></script>
 
     <!-- External Main JavaScript for tabsets, code folding, and tocify initialization -->
     <script src="js/main.js"></script>
+
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" integrity="sha384-qMw8H5nM3o9XG0jU2gnff7vLCEkEJ5f+T+cFYilf+S4I3Kzg8KuDI5IJ9kAr2J4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">    
 
 </head>
 <body class="portfolio-body">
@@ -49,16 +68,16 @@
                 <div class="header-section">
                     <!-- Dropdown for Show/Hide Code (optional, can be simplified or removed if not needed) -->
                     <div class="code-options-dropdown">
-                        <button id="dropdownCodeBtn" class="dropdown-button">
+<!--                         <button id="dropdownCodeBtn" class="dropdown-button">
                             Code Options <i class="fas fa-chevron-down dropdown-arrow"></i>
                         </button>
                         <ul id="dropdownCodeMenu" class="dropdown-menu">
                             <li><a id="rmd-show-all-code" href="#" class="dropdown-item">Show All Code</a></li>
                             <li><a id="rmd-hide-all-code" href="#" class="dropdown-item">Hide All Code</a></li>
                         </ul>
-                    </div>
+                    </div> -->
 
-                    <h1 class="main-title toc-ignore">Nora Anzawi</h1>
+                    <h2 class="main-title toc-ignore">Nora Anzawi</h2>
                 </div>
 
                 <h4 class="author-social-links">
@@ -77,81 +96,190 @@
 
                 <!-- Intro Section -->
                 <div id="intro" class="section">
-                    <h2 class="section-title">Intro</h2>
+                    <h3 class="section-title">Intro</h3>
                     <hr class="section-divider"/>
                     <p class="section-paragraph">I am a social entrepreneur focused on providing informed, comprehensive research analysis and data services to underserved communities. I help foundations, non-profits, and consultancies to access, curate, and analyze internal and secondary data to understand socioeconomic trends, support strategic goals, and increase stakeholder engagement.</p>
                     <p class="section-paragraph">My passion is to empower the public with sustainable processes, information, and tools they need to achieve their vision.</p>
                 </div>
 
+
                 <!-- Services Section -->
                 <div id="services" class="section">
-                    <h2 class="section-title">Services</h2>
+                    <h3 class="section-title">Services</h3>
                     <hr class="section-divider"/>
                     <div class="services-grid">
-                        <div class="service-card">
-                            <div class="service-icon-wrapper service-icon-blue">
-                                <img class="service-icon-img" src="img/magnifying.png" alt="Data Mining Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ADD8E6/000000?text=Search';">
-                                <p class="service-title">Data Mining</p>
-                            </div>
-                            <p class="service-description">Data exploration, application of quantitative and qualitative methods, reusable data analysis.</p>
+                      <div class="service-card">
+                        <div class="service-icon-wrapper">
+                          <img class="service-icon-img" src="img/magnifying.png" alt="Data Mining">
                         </div>
-                        <div class="service-card">
-                            <div class="service-icon-wrapper service-icon-green">
-                                <img class="service-icon-img" src="img/map.png" alt="Geospatial Analysis Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/90EE90/000000?text=Map';">
-                                <p class="service-title">Geospatial Analysis</p>
-                            </div>
-                            <p class="service-description">Harvest and analyze geographic data to uncover spatial patterns, trends, and relationships.</p>
+                        <p class="service-title">Data Mining</p>
+                        <p class="service-description">
+                          Data exploration, application of quantitative and qualitative methods,
+                          reusable data analysis.
+                        </p>
+                      </div>
+
+                      <div class="service-card">
+                        <div class="service-icon-wrapper">
+                          <img class="service-icon-img" src="img/map.png" alt="Geospatial Analysis">
                         </div>
-                        <div class="service-card">
-                            <div class="service-icon-wrapper service-icon-purple">
-                                <img class="service-icon-img" src="img/pie_symbol.png" alt="Data Visualization Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/DDA0DD/000000?text=Chart';">
-                                <p class="service-title">Data Visualization</p>
-                            </div>
-                            <p class="service-description">Creation of static and interactive data visualizations for reports, dashboards, and presentations.</p>
+                        <p class="service-title">Geospatial Analysis</p>
+                        <p class="service-description">
+                          Harvest and analyze geographic data to uncover spatial patterns,
+                          trends, and relationships.
+                        </p>
+                      </div>
+
+                      <div class="service-card">
+                        <div class="service-icon-wrapper">
+                          <img class="service-icon-img" src="img/pie_symbol.png" alt="Data Visualization">
                         </div>
+                        <p class="service-title">Data Visualization</p>
+                        <p class="service-description">
+                          Creation of static and interactive data visualizations for reports,
+                          dashboards, and presentations.
+                        </p>
+                      </div>
                     </div>
+                </div> 
+
+
+            <!-- ▸ Portfolio ---------------------------------------------------- -->
+            <div id="portfolio" class="section">
+              <h3 class="section-title">Portfolio</h3>
+              <hr class="section-divider"/>
+              <!-- <p class="section-paragraph">[Under construction]</p> -->
+
+            <!-- ▸ Pill navigation (hrefs use #first … #fifth) -->
+              <ul class="nav-pills" id="portfolioTabs">
+                <li><a href="#first"  class="active">KC Connectivity Report</a></li>
+                <li><a href="#second"           >AltCap Relief & Recovery</a></li>
+                <li><a href="#third"            >Greenville SC Insights</a></li>
+                <li><a href="#fourth"           >KC Streetcar NorthRail</a></li>
+                <li><a href="#fifth"            >CDFI Impact Framework</a></li>
+              </ul>
+
+              <!-- ▸ Tab-panes (IDs match the hrefs) -->
+
+                <!-- ▸ Tab-pane 1 -------------------------------------------------- -->
+                <div id="first" class="tab-content">
+
+                  <!-- plain title, not a link -->
+                  <p class="proj-title">KC Connectivity Report</p>
+
+                  <ul class="proj-meta">
+                    <li><strong>What is it:</strong> An in-depth analysis of Kansas City’s
+                        digital divide at the start of the 2020 pandemic, created with the City
+                        and school district and later templatized for customers.</li>
+
+                    <li><strong>How to view:</strong> The full interactive report is hosted on
+                        mySidewalk
+                        <a href="https://reports.mysidewalk.com/fb5f62c11a"
+                           target="_blank"
+                           rel="noopener">here</a>.</li>
+                  </ul>
+
+                  <img src="img/mys_DigitalDivideIndex.png"
+                       alt="KC Connectivity Report thumbnail"
+                       style="max-width:100%;height:auto;">
                 </div>
 
-                <!-- Portfolio Section -->
-                <div id="portfolio" class="section">
-                    <h2 class="section-title">Portfolio</h2>
-                    <hr class="section-divider"/>
-                    <p class="section-paragraph">[Under construction]</p>
+                <!-- ▸ Tab-pane 2 --------------------------------------------------- -->
+                <div id="second" class="tab-content" hidden>
 
-                    <div id="first" class="subsection">
-                        <h3 class="subsection-title">First</h3>
-                        <p class="subsection-paragraph">Content of sub-chapter #1: (No content was provided here, removed the broken CSS code block.)</p>
-                    </div>
+                  <p class="proj-title">AltCap Relief & Recovery Fund Report</p>
 
-                    <div id="second" class="subsection">
-                        <h3 class="subsection-title">Second</h3>
-                        <!-- Adjust iframe for responsiveness -->
-                        <div class="iframe-wrapper">
-                            <iframe class="portfolio-iframe"
-                                src="https://reports.mysidewalk.com/1fff628025?embed=c-1014509"
-                                title="Businesses Under 50 Employees"
-                                frameborder="0"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
+                  <ul class="proj-meta">
+                    <li><strong>What is it:</strong> An overview of the impact created by relief funding for small businesses in a simple, visually appealing format. Provided to funders, used for advocacy efforts, and presented to civic leaders engaged in AltCap's efforts as a CDFI.</li>
+                    <li><strong>How to view:</strong>
+                        The interactive report is available on the AltCap website
+                        <a href="https://www.altcap.org/stories/relief-fund-impacts-report-2021"
+                           target="_blank"
+                           rel="noopener">here</a>.
+                    </li>
+                  </ul>
 
-                    <div id="third" class="subsection">
-                        <h3 class="subsection-title">Third</h3>
-                        <p class="subsection-paragraph">Content of sub-chapter #3: <a href="https://nanzawi.wixsite.com/developingkc/practicum" target="_blank" class="text-link">https://nanzawi.wixsite.com/developingkc/practicum</a></p>
-                    </div>
+                  <img src="images/dummy_thumbnail.jpg"
+                       alt="AltCap Relief and Recovery thumbnail"
+                       style="max-width:100%;height:auto;">
                 </div>
+
+                <!-- ▸ Tab-pane 3 --------------------------------------------------- -->
+                <div id="third" class="tab-content" hidden>
+
+                  <p class="proj-title">Greenville, SC Community Insights</p>
+
+                  <ul class="proj-meta">
+                    <li><strong>What is it:</strong> Community insights dashboard customized and curated for the Greenville, SC Chamber of Commerce. The deliverable was shared with stakeholders as part of the Accelerate Greenville initiative to invest in data-oriented practices to address barriers to employment and talent retention. </li>
+                    <li><strong>How to view:</strong>
+                    A sample from the section Growing a Greater Greenville can be found in the Google Drive
+                    <a href="https://drive.google.com/file/d/1KUVmMfEOjeagKv8gvIS3gSJahiTuZTYw/view"
+                       target="_blank" rel="noopener">
+                       here.
+                    </a>
+                    The full interactive dashboard can is available on the mySidewalk host site <a href="https://dashboards.mysidewalk.com/greenvillesc/welcome"
+                       target="_blank" rel="noopener">
+                       here.
+                    </a></li>
+                  </ul>
+
+                  <img src="images/dummy_thumbnail.jpg"
+                       alt="Greenville SC Insights thumbnail"
+                       style="max-width:100%;height:auto;">
+                </div>
+
+                <!-- ▸ Tab-pane 4 --------------------------------------------------- -->
+                <div id="fourth" class="tab-content" hidden>
+
+                  <p class="proj-title">KC Streetcar NorthRail Extension Maps</p>
+
+                  <ul class="proj-meta">
+                    <li><strong>What is it:</strong> Maps extracted from the analysis of two refined Tier 2 alternatives for the potential NorthRail streetcar service connecting the River Market in Kansas City, MO with the City of North Kansas City. The two alternatives carried forward out of Tier 1 were a modified Alternative H-3, which would use the Heart of America (HOA) bridge to cross the Missouri River, and Alternative N-1, which would cross the river on a transit-only structure just east of the HOA bridge.</li>
+                    <li><strong>How to view:</strong> Maps available upon request
+                        <a href="https://drive.google.com/file/d/1-V7DwC3rnF2eTb0MnR0eKgDGe5kt_pu-/view?usp=sharing"
+                       target="_blank" rel="noopener">
+                       here.
+                    </a></li>
+                  </ul>
+
+                  <img src="images/dummy_thumbnail.jpg"
+                       alt="KC Streetcar NorthRail thumbnail"
+                       style="max-width:100%;height:auto;">
+                </div>
+
+                <!-- ▸ Tab-pane 5 --------------------------------------------------- -->
+                <div id="fifth" class="tab-content" hidden>
+
+                  <p class="proj-title">Growth, Equity & Individual Welfare — A CDFI Impact Framework</p>
+
+                  <ul class="proj-meta">
+                    <li><strong>What is it:</strong> A research brief or one-pager provided to an array of stakeholders (general public, non-profits, think tanks, private partners) to prime the audience on the key themes included in the full publication.</li>
+                    <li><strong>How to view:</strong>
+                    The research brief is attached, containing a
+                    <a href="https://www.carolinasmallbusiness.org/post/evaluation-frameworks/"
+                       target="_blank" rel="noopener">
+                       DOI link
+                    </a>
+                    to the full publication on the Carolina Small Business Development Fund (CSBDF) website.
+                </li>
+                  </ul>
+
+                  <img src="img/paper.png"
+                       alt="CDFI Impact Framework thumbnail"
+                       style="max-width:100%;height:auto;">
+                </div>
+            </div>   
 
                 <!-- C/V Section -->
                 <div id="cv" class="section">
-                    <h2 class="section-title">C/V</h2>
+                    <h3 class="section-title">C/V</h3>
                     <hr class="section-divider"/>
                     <p class="section-paragraph">This section is currently empty. You can add your resume/CV content here.</p>
                 </div>
 
                 <!-- Contact Section -->
                 <div id="Contact" class="section">
-                    <h2 class="section-title">Contact</h2>
+                    <h3 class="section-title">Contact</h3>
                     <hr class="section-divider"/>
                     <p class="section-paragraph contact-text">
                         Feel free to contact me for any questions. For open source projects, please open an issue or pull request on
@@ -170,19 +298,16 @@
                             Mail
                         </a>
                     </div>
-                    <p class="footer-social-icons">
-                        <a href="https://www.linkedin.com/in/noraanzawi" target="_blank" class="footer-icon-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/noraanzawi" target="_blank" class="footer-icon-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </p>
                 </div>
 
             </div> <!-- End of main content col -->
         </div> <!-- End of main grid row -->
     </div> <!-- End of main-container -->
 
+</body>
+<footer class="site-footer">
+      © 2025 Nora Anzawi
+    </footer>
+  </div>
 </body>
 </html>
