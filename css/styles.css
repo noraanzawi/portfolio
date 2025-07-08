@@ -4,7 +4,7 @@
 body {
     font-family: 'Source Sans Pro', sans-serif; /* Preferred font */
     margin: 0;
-    padding: 24px; /* Mimics Tailwind's p-6 for overall page padding */
+    padding: 220px; /* Mimics Tailwind's p-6 for overall page padding */
     background-color: #ffffff; /* Light gray background */
     line-height: 1.6;
     color: #333;
@@ -21,16 +21,15 @@ a:hover {
 
 /* --- Main Container & Grid Layout --- */
 .main-container {
-    max-width: 1280px; /* Equivalent to max-w-7xl from Tailwind */
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  max-width: 1200px;      /* grows wider like Holtzy’s site */
+  margin: 0 auto;         /* centers it in the viewport */
+  padding: 0 1rem;        /* small side-padding so content never touches the edge */
 }
 
 .main-grid-layout {
-    display: grid;
-    grid-template-columns: 1fr; /* Default to single column for mobile (col-xs-12) */
-    gap: 32px; /* Mimics Tailwind's gap-8 */
+  display: grid;
+  grid-template-columns: 300px 1fr; /* sidebar = 300px, content fills the rest */
+  gap: 3rem;                        /* 48px gutter vs your current ~16px */
 }
 
 @media (min-width:768px){
@@ -38,6 +37,7 @@ a:hover {
 }
 
 /* --- Left Sidebar (Headshot & TOC) --- */
+
 /* give the fixed sidebar its own “layer” */
 .sidebar{
   position:fixed;
@@ -50,7 +50,7 @@ a:hover {
 .main-content {
   grid-column: 2;
   margin: 0;
-  background: #fffff;
+  background: #ffffff;
   padding: 32px;
   border-radius: 8px;
 /*  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),
@@ -99,7 +99,7 @@ a:hover {
 
 .main-title {
     font-size: 36px; /* text-4xl */
-    font-weight: 700; /* font-bold */
+    font-weight: 400; /* font-bold */
     color: #1f2937; /* text-gray-800 */
     margin: 0; /* Remove default margin */
     flex-grow: 1; /* Allow title to take available space */
@@ -185,7 +185,7 @@ a:hover {
 .social-icons-wrapper {
     display: flex;
     justify-content: center;
-    gap: 14px; /* space-x-4 */
+    gap: 12px; /* space-x-4 */
 }
 
 .social-icon-link {
@@ -199,8 +199,8 @@ a:hover {
 }
 
 .social-icon {
-    width: 40px; /* w-10 */
-    height: 40px; /* h-10 */
+    width: 50px; /* w-10 */
+    height: 50px; /* h-10 */
     border-radius: 9999px; /* rounded-full */
     object-fit: cover;
 }
@@ -214,15 +214,15 @@ a:hover {
 
 .section-title {
     font-size: 30px; /* text-3xl */
-    font-weight: 600; /* font-semibold */
+    font-weight: 400; /* font-semibold */
     color: #1f2937; /* text-gray-800 */
     margin-bottom: 16px; /* mb-4 */
 }
 
 .section-divider {
     border: none; /* Reset default hr border */
-    border-top: 2px solid #d1d5db; /* border-t-2 border-gray-300 */
-    margin-bottom: 24px; /* mb-6 */
+    border-top: 1px solid #ccc; /* border-t-2 border-gray-300 */
+    margin-bottom: 48px; /* mb-6 */
 }
 
 .section-paragraph {
@@ -274,7 +274,7 @@ a:hover {
 
 .service-title {
     font-size: 20px; /* text-xl */
-    font-weight: 500; /* font-medium */
+    font-weight: 400; /* font-medium */
     color: #1f2937; /* text-gray-800 */
 }
 
@@ -289,7 +289,7 @@ a:hover {
 
 .subsection-title {
     font-size: 24px; /* text-2xl */
-    font-weight: 500; /* font-medium */
+    font-weight: 400; /* font-medium */
     color: #1f2937; /* text-gray-800 */
     margin-bottom: 8px; /* mb-2 */
 }
@@ -347,7 +347,7 @@ a:hover {
 .contact-button {
     background-color: #009688; 
     color: #ffffff; /* text-white */
-    font-weight: 700; /* font-bold */
+    font-weight: 400; /* font-bold */
     padding: 12px 24px; /* py-3 px-6 */
     border-radius: 8px; /* rounded-lg */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
@@ -478,6 +478,42 @@ a:hover {
   padding-bottom: 0;        /* if you’d rather kill any built-in padding */
 }
 
+/* ── two-column layout for portfolio items ── */
+.tab-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 1.5rem;               /* space between text & image */
+  align-items: start;        /* top-align text+image */
+}
+
+/* force image into the right column, spanning all rows */
+.tab-content img {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  margin-top: 0.5rem;   
+  align-self: center;   
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* stacked: image always below text */
+.tab-content--stack {
+  /* switch back to a block/column layout */
+  display: block;  
+}
+
+/* stack into one column on small screens */
+@media (max-width: 767px) {
+  .tab-content {
+    display: block;
+  }
+}
+
+.proj-meta li {
+  margin-bottom: 1rem;    /* adjust to taste (e.g. 0.5rem, 1.5rem, etc.) */
+}
+
 /* tighten up your C/V section spacing */
 .section {
   margin-top: 0.5rem;       /* brings the C/V heading closer to the project above */
@@ -497,4 +533,15 @@ a:hover {
   text-align: center;
   background-color: #f3f4f6;
   margin-top: 2rem;
+}
+
+
+.body-link {
+  color: #1e90ff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.body-link:hover {
+  color: #0056cc;
+  text-decoration: underline;
 }
